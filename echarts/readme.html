@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="toc_0">echarts插件使用说明v1.0.1</h1>
+
+<h3 id="toc_1">提醒：本插件是对于百度echarts插件的二次js封装</h3>
+
+<h2 id="toc_2">依赖js文件</h2>
+
+<p>jquery-3.1.1.min.js<br/>
+    echarts.min.js</p>
+
+<h2 id="toc_3">插件js文件说明</h2>
+
+<h3 id="toc_4">echarts_line.js</h3>
+
+<p>用于绘制折线图</p>
+
+<h4 id="toc_5">使用说明</h4>
+
+<p>调用方法</p>
+
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-3.1.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/echarts.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/echarts_line.js&quot;&gt;&lt;/script&gt;
+initEchartsLine(containerId,titleText, subTitleText,legendArray,xArray,yName,dataArray,nameArray,colorArray)
+</code></pre>
+
+<h4 id="toc_6">参数说明</h4>
+
+<table>
+    <thead>
+    <tr>
+        <th>参数名称</th>
+        <th>参数类型</th>
+        <th>参数说明</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>containerID</td>
+        <td>String</td>
+        <td>绘制区域div ID</td>
+    </tr>
+    <tr>
+        <td>titleText</td>
+        <td>String</td>
+        <td>图表标题</td>
+    </tr>
+    <tr>
+        <td>subTitleText</td>
+        <td>String</td>
+        <td>图表副标题</td>
+    </tr>
+    <tr>
+        <td>legendArray</td>
+        <td>String[]</td>
+        <td>图例名称</td>
+    </tr>
+    <tr>
+        <td>xArray</td>
+        <td>String[]</td>
+        <td>x轴数据</td>
+    </tr>
+    <tr>
+        <td>dataArray</td>
+        <td>int[]</td>
+        <td>数据内容数组</td>
+    </tr>
+    <tr>
+        <td>nameArray</td>
+        <td>String[]</td>
+        <td>数据内容名称</td>
+    </tr>
+    <tr>
+        <td>colorArray</td>
+        <td>String[]</td>
+        <td>数据内容对应线条颜色代码数组</td>
+    </tr>
+    <tr>
+        <td>textName</td>
+        <td>String</td>
+        <td>标题下方数据显示名称</td>
+    </tr>
+    <tr>
+        <td>textOne</td>
+        <td>String</td>
+        <td>标题下方显示数据一</td>
+    </tr>
+    <tr>
+        <td>textTwo</td>
+        <td>String</td>
+        <td>标题下方显示数据二</td>
+    </tr>
+    </tbody>
+</table>
+
+<h4 id="toc_7">使用例子</h4>
+
+<pre><code>&lt;div id=&quot;line&quot; style=&quot;width: 100%;height:400px;margin-top:50px;&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+       var arr = [[120, 132, 101, 134, 90, 230, 210],[220, 182, 191, 234, 290, 330, 310]];
+       var containerId=&#39;line&#39;;
+       var titleText=&#39;页面浏览量趋势&#39;;
+       var date = new Date();
+       var subTitleText= date.getFullYear()+&quot;/&quot;+(date.getMonth()+1)+&quot;/&quot;+date.getDate(); //标题
+       var legendArray=[&#39;上一周期&#39;,&#39;当前周期&#39;];
+       var xArray=[&#39;0:00&#39;, &#39;4:00&#39;, &#39;8:00&#39;, &#39;12:00&#39;, &#39;16:00&#39;, &#39;20:00&#39;];
+       var yName=&#39;页面浏览量&#39;;
+       var dataArray=[arr[0],arr[1]];
+       var nameArray=[&#39;上一周期&#39;,&#39;当前周期&#39;];
+       var colorArray=[&quot;#d9d1bd&quot;,&quot;#74c296&quot;];
+       initEchartsLine(containerId,titleText, subTitleText,legendArray,xArray,yName,dataArray,nameArray,colorArray);
+&lt;/script&gt;
+</code></pre>
+
+<h4 id="toc_8">效果图</h4>
+
+<p><img src="http://olaumzn8v.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-14%20%E4%B8%8A%E5%8D%8811.36.15.png" alt="屏幕快照 2017-02-14 上午11.36.15"/></p>
+
+<h3 id="toc_9">echarts_bar.js</h3>
+
+<p>用于绘制柱状图</p>
+
+<h4 id="toc_10">使用说明</h4>
+
+<p>调用方法</p>
+
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-3.1.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/echarts.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/echarts_bar.js&quot;&gt;&lt;/script&gt;
+initEchartsBarX(containerId,titleText, subTitleText,legendArray,xArray,yName,colorArray,dataArray,nameArray,xPosition)
+//纵向
+
+initEchartsBarY(containerId,titleText, subTitleText,legendArray,xName,yArray,colorArray,dataArray,nameArray,xPosition)
+//横向
+</code></pre>
+
+<h4 id="toc_11">参数说明</h4>
+
+<table>
+    <thead>
+    <tr>
+        <th>参数名称</th>
+        <th>参数类型</th>
+        <th>参数说明</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>containerID</td>
+        <td>String</td>
+        <td>绘制区域div ID</td>
+    </tr>
+    <tr>
+        <td>titleText</td>
+        <td>String</td>
+        <td>图表标题</td>
+    </tr>
+    <tr>
+        <td>subTitleText</td>
+        <td>String</td>
+        <td>图表副标题</td>
+    </tr>
+    <tr>
+        <td>legendArray</td>
+        <td>String[]</td>
+        <td>图例名称</td>
+    </tr>
+    <tr>
+        <td>xArray</td>
+        <td>String[]</td>
+        <td>x轴数据（纵向）</td>
+    </tr>
+    <tr>
+        <td>yArray</td>
+        <td>String[]</td>
+        <td>y轴数据（横向）</td>
+    </tr>
+    <tr>
+        <td>xName</td>
+        <td>String</td>
+        <td>x轴名称（横向）</td>
+    </tr>
+    <tr>
+        <td>dataArray</td>
+        <td>int[]</td>
+        <td>数据内容数组</td>
+    </tr>
+    <tr>
+        <td>nameArray</td>
+        <td>String[]</td>
+        <td>数据内容名称</td>
+    </tr>
+    <tr>
+        <td>colorArray</td>
+        <td>String[]</td>
+        <td>数据内容对应线条颜色代码数组</td>
+    </tr>
+    <tr>
+        <td>xPosition</td>
+        <td>String</td>
+        <td>&#39;top&#39;/&#39;bottom&#39;x轴位置（上方/下方）</td>
+    </tr>
+    <tr>
+        <td>textName</td>
+        <td>String</td>
+        <td>标题下方数据显示名称（纵向）</td>
+    </tr>
+    <tr>
+        <td>textOne</td>
+        <td>String</td>
+        <td>标题下方显示数据一（纵向）</td>
+    </tr>
+    <tr>
+        <td>textTwo</td>
+        <td>String</td>
+        <td>标题下方显示数据二（纵向）</td>
+    </tr>
+    </tbody>
+</table>
+
+<p>按顺序传入</p>
+
+<h4 id="toc_12">使用例子</h4>
+
+<pre><code>&lt;div id=&quot;bar&quot; style=&quot;width: 100%;height:400px;margin-top:50px;&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            var containerId=&#39;bar&#39;;
+            var titleText=&#39;新用户访问趋势&#39;;
+            var date = new Date();
+            var subTitleText= date.getFullYear()+&quot;/&quot;+(date.getMonth()+1)+&quot;/&quot;+date.getDate();
+            var legendArray=[&#39;新用户访问量&#39;];
+            var xArray=[&#39;0:00&#39;, &#39;6:00&#39;, &#39;12:00&#39;, &#39;18:00&#39;];
+            var yName=&#39;新用户访问量&#39;;
+            var dataArray=[[2,3,4,5]];
+            var nameArray=[&#39;新用户访问量&#39;];
+            var colorArray = [&quot;#60a5b8&quot;];
+            var xPosition = &#39;bottom&#39;;
+            initEchartsBarX(containerId,titleText, subTitleText,legendArray,xArray,yName,colorArray,dataArray,nameArray,xPosition);
+        &lt;/script&gt;
+
+        &lt;div id=&quot;down_bar&quot; style=&quot;width: 100%;height:400px;margin-top:50px;&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            var containerId=&#39;down_bar&#39;;
+            var titleText=&#39;新用户访问趋势&#39;;
+            var date = new Date();
+            var subTitleText= date.getFullYear()+&quot;/&quot;+(date.getMonth()+1)+&quot;/&quot;+date.getDate();
+            var legendArray=[&#39;新用户访问量&#39;];
+            var yArray=[&#39;0:00&#39;, &#39;6:00&#39;, &#39;12:00&#39;, &#39;18:00&#39;];
+            var xName=&#39;新用户访问量&#39;;
+            var dataArray=[[2,3,4,5]];
+            var nameArray=[&#39;新用户访问量&#39;];
+            var colorArray = [&quot;#60a5b8&quot;];
+            var xPosition = &#39;top&#39;;
+            initEchartsBarY(containerId,titleText, subTitleText,legendArray,xName,yArray,colorArray,dataArray,nameArray,xPosition);
+        &lt;/script&gt;
+</code></pre>
+
+<h4 id="toc_13">效果图</h4>
+
+<p><img src="http://olaumzn8v.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-14%20%E4%B8%8A%E5%8D%8811.36.20.png" alt="屏幕快照 2017-02-14 上午11.36.20"/><br/>
+    <img src="http://olaumzn8v.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-14%20%E4%B8%8A%E5%8D%8811.36.25.png" alt="屏幕快照 2017-02-14 上午11.36.25"/></p>
+
+<h3 id="toc_14">echarts_pie.js</h3>
+
+<p>用于绘制饼图图</p>
+
+<h4 id="toc_15">使用说明</h4>
+
+<p>调用方法</p>
+
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-3.1.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/echarts.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/echarts_pie.js&quot;&gt;&lt;/script&gt;
+initEchartsPie(containerId,titleText,subTitleText,legendArray,dataArray,nameArray,colorArray)
+</code></pre>
+
+<h4 id="toc_16">参数说明</h4>
+
+<table>
+    <thead>
+    <tr>
+        <th>参数名称</th>
+        <th>参数类型</th>
+        <th>参数说明</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>containerID</td>
+        <td>String</td>
+        <td>绘制区域div ID</td>
+    </tr>
+    <tr>
+        <td>titleText</td>
+        <td>String</td>
+        <td>图表标题</td>
+    </tr>
+    <tr>
+        <td>subTitleText</td>
+        <td>String</td>
+        <td>图表副标题</td>
+    </tr>
+    <tr>
+        <td>legendArray</td>
+        <td>String[]</td>
+        <td>图例名称</td>
+    </tr>
+    <tr>
+        <td>dataArray</td>
+        <td>int[]</td>
+        <td>数据内容数组</td>
+    </tr>
+    <tr>
+        <td>nameArray</td>
+        <td>String[]</td>
+        <td>数据内容名称</td>
+    </tr>
+    <tr>
+        <td>colorArray</td>
+        <td>String[]</td>
+        <td>数据内容对应线条颜色代码数组</td>
+    </tr>
+    </tbody>
+</table>
+
+<p>按顺序传入</p>
+
+<h4 id="toc_17">使用例子</h4>
+
+<pre><code>&lt;div id=&quot;pie&quot; style=&quot;width: 100%;height:400px;margin-top:50px;&quot;&gt;&lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            var containerId=&#39;pie&#39;;
+            var titleText=&#39;访问用户访问来源&#39;;
+            var legendArray=[&#39;直接访问&#39;];
+            var dataArray=[{value:335, name:&#39;直接访问&#39;}];
+            var nameArray=[&#39;访问来源&#39;];
+            var subTitleText= date.getFullYear()+&quot;/&quot;+(date.getMonth()+1)+&quot;/&quot;+date.getDate();
+            var colorArray = [&#39;#60a5b8&#39;];
+            initEchartsPie(containerId,titleText,subTitleText,legendArray,dataArray,nameArray,colorArray);
+        &lt;/script&gt;
+</code></pre>
+
+<h4 id="toc_18">效果图</h4>
+
+<p><img src="http://olaumzn8v.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-13%20%E4%B8%8B%E5%8D%882.44.53.png" alt="屏幕快照 2017-02-13 下午2.44.53"/></p>
+
+</body>
+</html>
