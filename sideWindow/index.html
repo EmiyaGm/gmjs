@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery制作侧边悬浮折叠影藏弹窗特效 - xw素材网</title>
+    <style type="text/css">
+        *{ margin:0; padding:0; list-style:none;}
+        body{ font-size:12px;}
+        .main{ width:260px; height:200px; position:fixed; bottom:60px; border:1px solid #ccc;}
+        .main2{ width:240px; height:180px; position:relative; padding:10px;}
+        .main2 ul li{ width:100%; height:22px; line-height:22px; text-align:left;}
+        .main2 ul li a{ color:#444; text-decoration:none;}
+        .main2 ul li a:hover{ text-decoration:underline; color:#000;}
+        .bar{ width:25px; height:105px; position:absolute; right:-25px; top:-1px; background:url(images/mini_bg.png) no-repeat; display:block;}
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="main2"><a href="javascript:" class="bar"></a>
+        <ul>
+            <li><a href="http://www.xwcms.net/" target="_blank">窗户玻璃雨滴逼真效果</a></li>
+            <li><a href="http://www.xwcms.net/" target="_blank">jQuery Griddler 插件控制图片悬停阴...</a></li>
+            <li><a href="http://www.xwcms.net/" target="_blank">jquery水平滑动tab选项卡</a></li>
+            <li><a href="http://www.xwcms.net/" target="_blank">jquery鼠标滑过图片各种文字说明展示效果</a></li>
+            <li><a href="http://www.xwcms.net/" target="_blank">透明切换tab标签样式焦点图轮播效果</a></li>
+            <li><a href="http://www.xwcms.net/" target="_blank">jquery动态页面加载进度条</a></li>
+            <li><a href="http://www.xwcms.net/" target="_blank">ns-window--ajax页面动态加载弹出窗口</a></li>
+            <li><a href="http://www.xwcms.net/" target="_blank">类似天猫、淘宝、京东等购物网站左侧..</a></li>
+        </ul>
+    </div>
+</div>
+<script src="../jquery/jquery-3.1.1.min.js"></script>
+<script>
+    $(function(){
+        $('.main').css('left','-262px');
+        var expanded = true;
+        $('.bar').click(function(){
+            if (expanded) {
+                $('.main').animate({left:'0'},500);
+                $('.bar').css('background-position','-25px 0px');
+
+            }else {
+                $('.main').animate({left:'-262px'},500);
+                $('.bar').css('background-position','-0px 0px');
+            }
+            expanded = !expanded;
+        });
+    });
+</script>
+
+</body>
+</html>
