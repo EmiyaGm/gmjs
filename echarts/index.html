@@ -98,7 +98,7 @@
             var textTwo = '+66.67%';
             initEchartsBarY(containerId,titleText, subTitleText,legendArray,xName,yArray,colorArray,dataArray,nameArray,xPosition,textName,textOne,textTwo);
         </script>
-        <div id="map" style="width: 47%;height:270px;top:50px;float: left;margin-left: 42px;border:1px solid #DAE2E5;"></div>
+        <div id="map" style="width: 47%;height:500px;top:50px;float: left;margin-left: 42px;border:1px solid #DAE2E5;"></div>
         <script type="text/javascript">
             var containerId='map';
             var titleText = '总里程数';
@@ -127,6 +127,12 @@
             var maxNumber = 2050000;
             var minNumber = 0;
             initEchartsMap(containerId,titleText,subTitleText,dataArray,nameArray,maxNumber,minNumber);
+        </script>
+        <div id="map2" style="width: 47%;height:500px;top:50px;float: left;left: 12px;border:1px solid #DAE2E5;"></div>
+        <script type="text/javascript">
+            var containerId='map2';
+            var titleText = '区域车辆分布';
+            initEchartsMap2(containerId,titleText);
         </script>
     <script type="text/javascript">
         window.addEventListener("resize",function(){ //页面大小变化后的重载方法
@@ -223,6 +229,9 @@
             var maxNumber = 2050000;
             var minNumber = 0;
             initEchartsMap(containerId,titleText,subTitleText,dataArray,nameArray,maxNumber,minNumber);
+            var containerId='map2';
+            var titleText = '区域车辆分布';
+            initEchartsMap2(containerId,titleText);
         });
 
     </script>
