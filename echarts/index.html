@@ -32,7 +32,20 @@
             var textOne = '9';
             var textTwo = '+200%';
             var xInterval = 3;
-            initEchartsLine(containerId,titleText, subTitleText,legendArray,xArray,dataArray,nameArray,colorArray,textName,textOne,textTwo,xInterval);
+            var map = new $.initEchartsLine({
+                containerId:containerId,
+                titleText:titleText,
+                subTitleText:subTitleText,
+                legendArray:legendArray,
+                xArray:xArray,
+                dataArray:dataArray,
+                nameArray:nameArray,
+                colorArray:colorArray,
+                textName:textName,
+                textOne:textOne,
+                textTwo:textTwo,
+                xInterval:xInterval});
+            map.drawMap();
         </script>
         <div id="bar" style="width: 47%;height:270px;margin-top:50px;float: left;left: 12px;border:1px solid #DAE2E5;"></div>
         <script type="text/javascript">
@@ -126,13 +139,15 @@
                 {name: '澳门',value: randomData() }]];
             var maxNumber = 2050000;
             var minNumber = 0;
-            initEchartsMap(containerId,titleText,subTitleText,dataArray,nameArray,maxNumber,minNumber);
+            var map = new $.initEchartsMap({containerId:containerId,titleText:titleText,subTitleText:subTitleText,dataArray:dataArray,nameArray:nameArray,maxNumber:maxNumber,minNumber:minNumber});
+            map.drawMap();
         </script>
         <div id="map2" style="width: 47%;height:500px;top:50px;float: left;left: 12px;border:1px solid #DAE2E5;"></div>
         <script type="text/javascript">
             var containerId='map2';
             var titleText = '区域车辆分布';
-            initEchartsMap2(containerId,titleText);
+            var map2 = new $.initEchartsMap2({containerId:containerId,titleText:titleText});
+            map2.drawMap();
         </script>
     <script type="text/javascript">
         window.addEventListener("resize",function(){ //页面大小变化后的重载方法
@@ -228,10 +243,12 @@
                 {name: '澳门',value: randomData() }]];
             var maxNumber = 2050000;
             var minNumber = 0;
-            initEchartsMap(containerId,titleText,subTitleText,dataArray,nameArray,maxNumber,minNumber);
+            var map = new $.initEchartsMap({containerId:containerId,titleText:titleText,subTitleText:subTitleText,dataArray:dataArray,nameArray:nameArray,maxNumber:maxNumber,minNumber:minNumber});
+            map.drawMap();
             var containerId='map2';
             var titleText = '区域车辆分布';
-            initEchartsMap2(containerId,titleText);
+            var map2 = new $.initEchartsMap2({containerId:containerId,titleText:titleText});
+            map2.drawMap();
         });
 
     </script>
