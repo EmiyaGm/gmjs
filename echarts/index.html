@@ -62,7 +62,20 @@
             var textName = '新用户访问量';
             var textOne = '5';
             var textTwo = '+66.67%';
-            initEchartsBarX(containerId,titleText, subTitleText,legendArray,xArray,colorArray,dataArray,nameArray,xPosition,textName,textOne,textTwo);
+            var map = new $.initEchartsBarX({
+                containerId:containerId,
+                titleText:titleText,
+                subTitleText:subTitleText,
+                legendArray:legendArray,
+                xArray:xArray,
+                colorArray:colorArray,
+                dataArray:dataArray,
+                nameArray:nameArray,
+                xPosition:xPosition,
+                textName:textName,
+                textOne:textOne,
+                textTwo:textTwo});
+            map.drawMap();
         </script>
         <div id="pie" style="width: 31%;height:270px;top:12px;float: left;margin-left: 42px;border:1px solid #DAE2E5;" ></div>
         <script type="text/javascript">
@@ -73,7 +86,15 @@
             var nameArray=['访问来源'];
             var subTitleText= date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate();
             var colorArray = ['#FFD159','#5FB6C7'];
-            initEchartsPie(containerId,titleText,subTitleText,legendArray,dataArray,nameArray,colorArray);
+            var map = new $.initEchartsPie({
+                containerId:containerId,
+                titleText:titleText,
+                subTitleText:subTitleText,
+                legendArray:legendArray,
+                dataArray:dataArray,
+                nameArray:nameArray,
+                colorArray:colorArray});
+            map.drawMap();
         </script>
         <div id="down_bar" style="width: 31%;height:270px;top:12px;float: left;margin-left: 12px;border:1px solid #DAE2E5;"></div>
         <script type="text/javascript">
@@ -86,12 +107,26 @@
             var xName='新用户访问量';
             var dataArray=[[2,3,4,5]];
             var nameArray=['新用户访问量'];
-            var colorArray = ["#ABCE5B"];
+            var colorArray = ["#60a5b8"];
             var xPosition = 'top';
             var textName = '新用户访问量';
             var textOne = '5';
             var textTwo = '+66.67%';
-            initEchartsBarY(containerId,titleText, subTitleText,legendArray,xName,yArray,colorArray,dataArray,nameArray,xPosition,textName,textOne,textTwo);
+            var map = new $.initEchartsBarY({
+                containerId:containerId,
+                titleText:titleText,
+                subTitleText:subTitleText,
+                legendArray:legendArray,
+                xName:xName,
+                yArray:yArray,
+                colorArray:colorArray,
+                dataArray:dataArray,
+                nameArray:nameArray,
+                xPosition:xPosition,
+                textName:textName,
+                textOne:textOne,
+                textTwo:textTwo});
+            map.drawMap();
         </script>
         <div id="up_bar" style="width: 31%;height:270px;top:12px;float: left;margin-left: 12px;border:1px solid #DAE2E5;"></div>
         <script type="text/javascript">
@@ -109,7 +144,21 @@
             var textName = '新用户访问量';
             var textOne = '5';
             var textTwo = '+66.67%';
-            initEchartsBarY(containerId,titleText, subTitleText,legendArray,xName,yArray,colorArray,dataArray,nameArray,xPosition,textName,textOne,textTwo);
+            var map = new $.initEchartsBarY({
+                containerId:containerId,
+                titleText:titleText,
+                subTitleText:subTitleText,
+                legendArray:legendArray,
+                xName:xName,
+                yArray:yArray,
+                colorArray:colorArray,
+                dataArray:dataArray,
+                nameArray:nameArray,
+                xPosition:xPosition,
+                textName:textName,
+                textOne:textOne,
+                textTwo:textTwo});
+            map.drawMap();
         </script>
         <div id="map" style="width: 47%;height:500px;top:50px;float: left;margin-left: 42px;border:1px solid #DAE2E5;"></div>
         <script type="text/javascript">
@@ -151,20 +200,37 @@
         </script>
     <script type="text/javascript">
         window.addEventListener("resize",function(){ //页面大小变化后的重载方法
-            var arr = [[120, 132, 101, 134, 90, 230, 210],[220, 182, 191, 234, 290, 330, 310]];//数据
+            function randomData() {
+                return Math.round(Math.random()*1000);
+            }
+            var arr = [[120, 132, 101, 134, 90, 230, 210,342,125,689,129,875,375,234,890,678,493,981,452,345,783,124,983,623],[220, 182, 191, 234, 290, 330, 310,120, 132, 101, 134, 90, 230, 210,342,125,689,129,875,375,234,890,678,493,981]];//数据
             var containerId='line';
             var titleText='页面浏览量趋势';//标题
             var date = new Date();
             var subTitleText= date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate(); //副标题
             var legendArray=['上一周期','当前周期'];//图例
-            var xArray=['0:00', '4:00', '8:00', '12:00', '16:00', '20:00'];
+            var xArray=['0:00','1:00','2:00','3:00', '4:00','5:00','6:00','7:00', '8:00', '9:00','10:00','11:00','12:00', '13:00','14:00','15:00','16:00', '17:00','18:00','19:00','20:00','21:00','22:00','23:00'];
             var dataArray=[arr[0],arr[1]];
             var nameArray=['上一周期','当前周期'];
-            var colorArray=["#d9d1bd","#74c296"];
+            var colorArray=["#d9d1bd","#FC5F3A"];
             var textName = '页面浏览量';
             var textOne = '9';
             var textTwo = '+200%';
-            initEchartsLine(containerId,titleText, subTitleText,legendArray,xArray,dataArray,nameArray,colorArray,textName,textOne,textTwo);
+            var xInterval = 3;
+            var map = new $.initEchartsLine({
+                containerId:containerId,
+                titleText:titleText,
+                subTitleText:subTitleText,
+                legendArray:legendArray,
+                xArray:xArray,
+                dataArray:dataArray,
+                nameArray:nameArray,
+                colorArray:colorArray,
+                textName:textName,
+                textOne:textOne,
+                textTwo:textTwo,
+                xInterval:xInterval});
+            map.drawMap();
             var containerId='bar';
             var titleText='新用户访问趋势';
             var date = new Date();
@@ -173,20 +239,41 @@
             var xArray=['0:00', '6:00', '12:00', '18:00'];
             var dataArray=[[2,3,4,5]];
             var nameArray=['新用户访问量'];
-            var colorArray = ["#60a5b8"];
+            var colorArray = ["#5FB6C7"];
             var xPosition = 'bottom';
             var textName = '新用户访问量';
             var textOne = '5';
             var textTwo = '+66.67%';
-            initEchartsBarX(containerId,titleText, subTitleText,legendArray,xArray,colorArray,dataArray,nameArray,xPosition,textName,textOne,textTwo);
+            var map = new $.initEchartsBarX({
+                containerId:containerId,
+                titleText:titleText,
+                subTitleText:subTitleText,
+                legendArray:legendArray,
+                xArray:xArray,
+                colorArray:colorArray,
+                dataArray:dataArray,
+                nameArray:nameArray,
+                xPosition:xPosition,
+                textName:textName,
+                textOne:textOne,
+                textTwo:textTwo});
+            map.drawMap();
             var containerId='pie';
             var titleText='访问用户访问来源';
             var legendArray=['直接访问','间接访问'];
             var dataArray=[{value:335, name:'直接访问'},{value:464, name:'间接访问'}];
             var nameArray=['访问来源'];
             var subTitleText= date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate();
-            var colorArray = ['#60a5b8','#000999'];
-            initEchartsPie(containerId,titleText,subTitleText,legendArray,dataArray,nameArray,colorArray);
+            var colorArray = ['#FFD159','#5FB6C7'];
+            var map = new $.initEchartsPie({
+                containerId:containerId,
+                titleText:titleText,
+                subTitleText:subTitleText,
+                legendArray:legendArray,
+                dataArray:dataArray,
+                nameArray:nameArray,
+                colorArray:colorArray});
+            map.drawMap();
             var containerId='down_bar';
             var titleText='新用户访问趋势';
             var date = new Date();
@@ -201,7 +288,21 @@
             var textName = '新用户访问量';
             var textOne = '5';
             var textTwo = '+66.67%';
-            initEchartsBarY(containerId,titleText, subTitleText,legendArray,xName,yArray,colorArray,dataArray,nameArray,xPosition,textName,textOne,textTwo);
+            var map = new $.initEchartsBarY({
+                containerId:containerId,
+                titleText:titleText,
+                subTitleText:subTitleText,
+                legendArray:legendArray,
+                xName:xName,
+                yArray:yArray,
+                colorArray:colorArray,
+                dataArray:dataArray,
+                nameArray:nameArray,
+                xPosition:xPosition,
+                textName:textName,
+                textOne:textOne,
+                textTwo:textTwo});
+            map.drawMap();
             var containerId='up_bar';
             var titleText='新用户访问趋势';
             var date = new Date();
@@ -211,12 +312,26 @@
             var xName='';
             var dataArray=[[2,3,4,5]];
             var nameArray=['新用户访问量'];
-            var colorArray = ["#60a5b8"];
+            var colorArray = ["#ABCE5B"];
             var xPosition = 'bottom';
             var textName = '新用户访问量';
             var textOne = '5';
             var textTwo = '+66.67%';
-            initEchartsBarY(containerId,titleText, subTitleText,legendArray,xName,yArray,colorArray,dataArray,nameArray,xPosition,textName,textOne,textTwo);
+            var map = new $.initEchartsBarY({
+                containerId:containerId,
+                titleText:titleText,
+                subTitleText:subTitleText,
+                legendArray:legendArray,
+                xName:xName,
+                yArray:yArray,
+                colorArray:colorArray,
+                dataArray:dataArray,
+                nameArray:nameArray,
+                xPosition:xPosition,
+                textName:textName,
+                textOne:textOne,
+                textTwo:textTwo});
+            map.drawMap();
             var containerId='map';
             var titleText = '总里程数';
             var date = new Date();

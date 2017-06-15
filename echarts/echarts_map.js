@@ -490,7 +490,7 @@
         ];
 
 
-        option = {
+        var option = {
             backgroundColor: '#404a59',
             animation: true,
             animationDuration: 1000,
